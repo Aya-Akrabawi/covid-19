@@ -22,8 +22,7 @@ const client = new pg.Client(process.env.DATABASE_URL);
 //routes:
 app.get('/', homePage)
 app.post('/getCountryResult', takeDate )
-app.get('/getCountryResult', renderCountryResult)
-
+app.get('/allCountries',allCountriesFunc)
 
 
 //functions:
@@ -44,19 +43,24 @@ function takeDate(req,res){
  superagent.get(url).then((result)=>{
    console.log('result',result.body)
   res.redirect('/getCountryResult')
-  res.render('/countryRes', {banana: result.body})
+  res.render('countryRes', {banana: result.body})
  })
 }
 
-function renderCountryResult (req,res){
+function allCountriesFunc (req,res){
+  let sql = `INSERT INTO (column_list)
+  VALUES (value_list), 
+         (value_list), …; `
+  let url = `https://api.covid19api.com/summary`
+  client.query
 
 }
 
-
-
-
-app.listen(PORT, () => {
-  console.log(`Example app listening to port:${PORT}`)
+client.connect().then(()=>{
+  app.listen(PORT, () => {
+    console.log(`Example app listening to port:${PORT}`)
+  })
 })
 
-  
+
+ 
