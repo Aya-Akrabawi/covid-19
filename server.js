@@ -21,6 +21,9 @@ const client = new pg.Client(process.env.DATABASE_URL);
 
 //routes:
 app.get('/', homePage)
+app.post('/getCountryResult', takeDate )
+app.get('/getCountryResult', renderCountryResult)
+
 
 
 //functions:
@@ -29,10 +32,28 @@ function homePage(req, res) {
 
   superagent.get(url).then(results => {
     let statistics = results.body
-    console.log(statistics.TotalConfirmed);
+    // console.log(statistics.TotalConfirmed);
     res.render('index.ejs', {statt : statistics})
   })
 }
+
+function takeDate(req,res){
+  // console.log(req.body)
+  let {country,date1,date2} = req.body
+  let url = `https://api.covid19api.com/country/${country}/status/confirmed?from=${date1}T00:00:00Z&to=${date2}T00:00:00Z`
+ superagent.get(url).then((result)=>{
+   console.log('result',result.body)
+  res.redirect('/getCountryResult')
+  res.render('/countryRes', {banana: result.body})
+ })
+}
+
+function renderCountryResult (req,res){
+
+}
+
+
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening to port:${PORT}`)

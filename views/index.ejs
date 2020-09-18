@@ -13,6 +13,14 @@
             <li>Total Recovered:<%= statt.TotalRecovered%></li>
       
     </section>
+    <form action="/getCountryResult" method="post">
+        <input type="text" name="country" id="country" placeholder="country name">
+        <label>from</label>
+    <input type="date" name="date1" id="date1">
+    <label>to</label>
+    <input type="date" name="date2" id="date2">
+    <input type="submit" value="Search">
+    </form>
 </body>
 </html>
 
