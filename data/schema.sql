@@ -1,13 +1,10 @@
-DROP TABLE IF EXISTS myTable;
+DROP TABLE IF EXISTS corona;
 
-CREATE TABLE myTable (
+CREATE TABLE corona (
     id serial PRIMARY KEY,
-    NewConfirmed VARCHAR(255),
-   TotalConfirmed VARCHAR(255),
-NewDeaths VARCHAR(255),
-TotalDeaths VARCHAR(255),
-NewRecovered VARCHAR(255),
-TotalRecovered VARCHAR(255)
+    country VARCHAR(255) ,
+    totalconfirmed VARCHAR(255) ,
+    totaldeaths VARCHAR(255) ,
+    totalrecovered VARCHAR(255) ,
+    dates VARCHAR(255) 
 );
-
-

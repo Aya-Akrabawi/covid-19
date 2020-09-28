@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corona</title>
-    <link rel="stylesheet" href="styles.css">
-
+    <title>covid</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <nav>
+        <a href="/">home</a>
+        <a href="/allCountries">all countries</a>
+        <a href="/myRecords">my records</a>
+    </nav>
     <section class="containAll">
-            
-            <li>Total Confirmed: <%= statt.TotalConfirmed%></li>
-            <li>Total Deaths: <%= statt.TotalDeaths%></li>
-            <li>Total Recovered:<%= statt.TotalRecovered%></li>
-      
+        <div><li>Total Confirmed<%= data.TotalConfirmed%></li></div>
+        <div><li>Total Deaths<%= data.TotalDeaths%></li></div>
+        <div><li>Total Recovered<%= data.TotalRecovered%></li></div>
     </section>
-    <section>
     <form action="/getCountryResult" method="post">
-        <input type="text" name="country" id="country" placeholder="country name">
-        <label>from</label>
-    <input type="date" name="date1" id="date1">
-    <label>to</label>
-    <input type="date" name="date2" id="date2">
-    <input type="submit" value="Search">
+    <input type="text" name="country" placeholder="Country Name">
+    <input type="date" name="fromDate" >
+    <input type="date" name="toDate" >
+    <input type="submit" value="search">
     </form>
-</section>
 </body>
 </html>
-
-

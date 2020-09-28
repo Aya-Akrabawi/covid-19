@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>covid</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/">home</a>
+        <a href="/allCountries">all countries</a>
+        <a href="/myRecords">my records</a>
+    </nav>
+    <section class="containAll">
+            <div>
+                <li>Date:<%= data.country%></li>
+                <li>Cases: <%= data.totalconfirmed%></li>
+                <li>Date:<%= data.totaldeaths%></li>
+                <li>Cases: <%= data.totalrecovered%></li>
+                <li>Date:<%= data.dates%></li>
+                <form action="/details/<%=data.id%>?_method=PUT" method="post">
+                    <input type="text" name="Country" value="<%= data.country%>">
+                    <input type="text" name="TotalConfirmed" value="<%= data.totalconfirmed%>">
+                    <input type="text" name="TotalDeaths" value="<%= data.totaldeaths%>">
+                    <input type="text" name="TotalRecovered" value="<%= data.totalrecovered%>">
+                    <input type="text" name="Date" value="<%= data.dates%>">
+                    <input type="submit" value="update">
+                </form>
+                <form action="/details/<%=data.id%>?_method=delete" method="post">
+                    <input type="submit" value="delete">
+                </form>
+            </div>
+            
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>covid</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/">home</a>
+        <a href="/allCountries">all countries</a>
+        <a href="/myRecords">my records</a>
+    </nav>
+    <section class="containAll">
+        <%data.forEach(item=>{%>
+            <div>
+                <li>Date:<%= item.Date%></li>
+                <li>Cases: <%= item.Cases%></li>
+            </div>
+        <%})%>
+    </section>
+    
+</body>
+</html>
+

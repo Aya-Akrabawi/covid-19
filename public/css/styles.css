@@ -1,0 +1,33 @@
+.containAll{
+    display: grid ;
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+    row-gap: 15px;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-around; 
+
+}
+nav{
+    display: grid ;
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+    row-gap: 15px;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-around; 
+    background-color: grey;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+div{
+    background-color: hotpink;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+
+form{
+
+}

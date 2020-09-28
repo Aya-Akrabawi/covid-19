@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>covid</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/">home</a>
+        <a href="/allCountries">all countries</a>
+        <a href="/myRecords">my records</a>
+    </nav>
+    <section class="containAll">
+        <%data.forEach(item=>{%>
+            <div>
+                <li>Date:<%= item.Country%></li>
+                <li>Cases: <%= item.TotalConfirmed%></li>
+                <li>Date:<%= item.TotalDeaths%></li>
+                <li>Cases: <%= item.TotalRecovered%></li>
+                <li>Date:<%= item.Date%></li>
+                <form action="/myRecords" method="post">
+                    <input type="text" name="Country" value="<%= item.Country%>">
+                    <input type="text" name="TotalConfirmed" value="<%= item.TotalConfirmed%>">
+                    <input type="text" name="TotalDeaths" value="<%= item.TotalDeaths%>">
+                    <input type="text" name="TotalRecovered" value="<%= item.TotalRecovered%>">
+                    <input type="text" name="Date" value="<%= item.Date%>">
+                    <input type="submit" value="add to my record">
+                </form>
+            </div>
+            
+        <%})%>
+    </section>
+    
+</body>
+</html>
