@@ -21,12 +21,7 @@
                 <li>Date:<%= item.totaldeaths%></li>
                 <li>Cases: <%= item.totalrecovered%></li>
                 <li>Date:<%= item.dates%></li>
-                <form action="/details/<%=item.id%>" method="post">
-                    <input type="text" name="Country" value="<%= item.country%>">
-                    <input type="text" name="TotalConfirmed" value="<%= item.totalconfirmed%>">
-                    <input type="text" name="TotalDeaths" value="<%= item.totaldeaths%>">
-                    <input type="text" name="TotalRecovered" value="<%= item.totalrecovered%>">
-                    <input type="text" name="Date" value="<%= item.dates%>">
+                <form action="/details/<%=item.id%>" method="get">
                     <input type="submit" value="view details">
                 </form>
             </div>

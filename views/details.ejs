@@ -19,7 +19,7 @@
                 <li>Date:<%= data.totaldeaths%></li>
                 <li>Cases: <%= data.totalrecovered%></li>
                 <li>Date:<%= data.dates%></li>
-                <form action="/details/<%=data.id%>?_method=PUT" method="post">
+                <form action="/updateDetails/<%=data.id%>?_method=PUT" method="POST">
                     <input type="text" name="Country" value="<%= data.country%>">
                     <input type="text" name="TotalConfirmed" value="<%= data.totalconfirmed%>">
                     <input type="text" name="TotalDeaths" value="<%= data.totaldeaths%>">
@@ -27,7 +27,7 @@
                     <input type="text" name="Date" value="<%= data.dates%>">
                     <input type="submit" value="update">
                 </form>
-                <form action="/details/<%=data.id%>?_method=delete" method="post">
+                <form action="/deleteDetails/<%=data.id%>?_method=DELETE" method="POST">
                     <input type="submit" value="delete">
                 </form>
             </div>

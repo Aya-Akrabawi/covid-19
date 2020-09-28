@@ -26,9 +26,9 @@ app.get('/getCountryResult',renderResult)
 app.get('/allCountries',allcountriesFunc)
 app.post('/myRecords', myrecord)
 app.get('/myRecords', renderRecord)
-app.post('/details/:id',details)
-app.put('/details/:id',updateRecord)
-app.delete('/details/:id',deleting)
+app.get('/details/:id',details)
+app.put('/updateDetails/:id',updateRecord)
+app.delete('/deleteDetails/:id',deleting)
 
 
 
@@ -95,9 +95,8 @@ function updateRecord(req,res){
     let sql = `UPDATE corona SET country=$1 ,totalconfirmed=$2 ,totaldeaths=$3 ,totalrecovered=$4 ,dates=$5 WHERE id=$6;`
     let value = [req.body.Country, req.body.TotalConfirmed, req.body.TotalDeaths, req.body.TotalRecovered, req.body.Date, req.params.id]
     client.query(sql,value).then(()=>{
-        res.redirect('/myRecords')
-        // res.redirect(`/details/${req.params.id}`);
-    })
+       res.redirect(`/details/${req.params.id}`)
+        })
 }
 function deleting(req,res){
     let sql = `delete from corona where id=$1`;
